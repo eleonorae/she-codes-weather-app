@@ -1,110 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="src/styles.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <form>
-      <div class="card bg-light mb-3" style="max-width: 600px">
-        <div class="card-header bg-transparent">
-          <input type="text" placeholder="Take me to..." class="search-bar col-6" />
-          <input
-            type="submit"
-            class="btn btn-warning shadow-sm col-3"
-            id="go-button"
-            value="Let's go!"
-          />
-        <input type="submit"
-        class="btn btn-info shadow-sm col-3" 
-        id="current-location-button"
-        value="...📍here" 
-        />
-        </div>
 
-        <div class="card-body text-info">
-          <h5 class="card-title" id="city-name"></h5>
-          <p class="card-text"></p>
-          <div class="container">
-            <div class="row">
-              <div class="col-12" id="current-date"></div>
-              <div class="col-6" id="current-time"></div>
-              <div class="col-6 temperature">☀️</div>
-              <div class="col-12">
-                <br />
-              </div>
-              <div class="col-6" id="humidity"></div>
-              <div class="col-6 right-side current-temp">
-                <span id="current-temp"></span>
-                <button class="temp-conversion celsius" id="celsius"></button>
-                
-                <button class="temp-conversion fahrenheit" id="fahrenheit"></button>
-              </div>
-              <div class="col-6" id="wind"></div>
-              <div class="col-6" id="description"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <form>
+    <div class="card bg-light mb-3" style="max-width: 600px">
+      <div class="card-header bg-transparent">
+        <input type="text" placeholder="Take me to..." class="search-bar col-6" />
+        <input type="submit" class="btn btn-warning shadow-sm col-3" id="go-button" value="Let's go!" />
+        <input type="submit" class="btn btn-info shadow-sm col-3" id="current-location-button"
+          value="Current location" />
+      </div>
+
+      <div class="card-body text-info">
+        <h5 class="card-title" id="city-name"></h5>
+        <p class="card-text"></p>
+        <div class="container">
+          <div class="row">
+            <div class="col-12" id="current-date"></div>
+            <div class="col-6" id="current-time"></div>
+            <div class="col-6 temperature">☀️</div>
+            <div class="col-12">
+              <br />
             </div>
+            <div class="col-6" id="humidity"></div>
+            <div class="col-6 right-side current-temp">
+              <span id="current-temp"></span>
+              <button class="temp-conversion celsius" id="celsius"></button>
+
+              <button class="temp-conversion fahrenheit" id="fahrenheit"></button>
+            </div>
+            <div class="col-6" id="wind"></div>
+            <div class="col-6" id="description"></div>
           </div>
         </div>
-        <div class="card-footer bg-transparent border-info">
-          <div class="container">
-            <div class="row">
-              <div class="col-2">
-                Friday
-                <br />
-                ☀️
-                <br />
-                37℃
-              </div>
-              <div class="col-2">
-                Friday
-                <br />
-                ☀️
-                <br />
-                37℃
-              </div>
-              <div class="col-2">
-                Friday
-                <br />
-                ☀️
-                <br />
-                37℃
-              </div>
-              <div class="col-2">
-                Friday
-                <br />
-                ☀️
-                <br />
-                37℃
-              </div>
-              <div class="col-2">
-                Friday
-                <br />
-                ☀️
-                <br />
-                37℃
-              </div>
-              <div class="col-2">
-                Friday
-                <br />
-                ☀️
-                <br />
-                37℃
-              </div>
+      </div>
+      <div class="card-footer bg-transparent border-info">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              Friday
+              <br />
+              ☀️
+              <br />
+              37℃
+            </div>
+            <div class="col-2">
+              Friday
+              <br />
+              ☀️
+              <br />
+              37℃
+            </div>
+            <div class="col-2">
+              Friday
+              <br />
+              ☀️
+              <br />
+              37℃
+            </div>
+            <div class="col-2">
+              Friday
+              <br />
+              ☀️
+              <br />
+              37℃
+            </div>
+            <div class="col-2">
+              Friday
+              <br />
+              ☀️
+              <br />
+              37℃
+            </div>
+            <div class="col-2">
+              Friday
+              <br />
+              ☀️
+              <br />
+              37℃
             </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
+  </form>
 
-    <script src="src/script.js"></script>
-  </body>
+  <script src="src/script.js"></script>
+</body>
+
 </html>
