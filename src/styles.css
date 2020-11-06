@@ -1,0 +1,36 @@
+.temperature {
+  font-size: 100px;
+  position: relative;
+  top: -30px;
+  right: -5px;
+}
+.card {
+  display: block;
+  margin: 30px auto;
+}
+.card-footer {
+  padding: 10px 0 10px 10px;
+}
+
+.card-body {
+  font-size: 20px;
+  line-height: 30px;
+}
+.current-temp {
+  font-weight: bold;
+}
+.search-bar {
+  width: 250px;
+}
+.temp-conversion {
+  border: none;
+  color: inherit;
+  background: inherit;
+}
+.temp-conversion:hover {
+  font-weight: bold;
+}
+.card-header {
+  border: none;
+  padding: 20px 20px 0 20px;
+}
