@@ -17,11 +17,13 @@ function updateDate(){
   }
 
   function displayWeather (response){
-  document.querySelector("#current-temp").innerHTML = `${Math.round(response.data.main.temp)}℃`;
+    celsiusTemperature = response.data.main.temp;
+  document.querySelector("#current-temp").innerHTML = `${Math.round(celsiusTemperature)}`;
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = `Humidity: ${response.data.main.humidity} %`;
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(response.data.wind.speed)}km/h`;
 document.querySelector("#description").innerHTML = response.data.weather[0].main;
+
 };
 
   function handleSubmit(event){
@@ -66,10 +68,39 @@ document.querySelector("#description").innerHTML = response.data.weather[0].main
   updateDate();
   updateTime();
   
+  
+  function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temp");
+celsiusButton.classList.remove("active");
+fahrenheitButton.classList.add("active");
+
+    let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  };
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusButton.classList.add("active");
+  fahrenheitButton.classList.remove("active");
+    let temperatureElement = document.querySelector("#current-temp");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+  
+  let celsiusTemperature = null;
+  
   let button = document.querySelector("#go-button");
   button.addEventListener("click", handleSubmit);
-
+  
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", getCurrentLocation);
+  
+  let fahrenheitButton = document.querySelector("#fahrenheit");
+  fahrenheitButton.addEventListener("click", displayFahrenheitTemperature);
+  
+  let celsiusButton = document.querySelector("#celsius");
+  celsiusButton.addEventListener("click", displayCelsiusTemperature);
 
-searchCity ("London");
+
+  searchCity ("London");

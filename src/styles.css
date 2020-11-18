@@ -16,9 +16,10 @@
   font-size: 20px;
   line-height: 30px;
 }
-.current-temp {
+#current-temp {
   font-weight: bold;
 }
+
 .search-bar {
   width: 250px;
 }
@@ -26,6 +27,7 @@
   border: none;
   color: inherit;
   background: inherit;
+  font-weight: default;
 }
 .temp-conversion:hover {
   font-weight: bold;
@@ -33,4 +35,14 @@
 .card-header {
   border: none;
   padding: 20px 20px 0 20px;
+}
+
+.temp-conversion.active {
+  cursor: default;
+  font-weight: bold;
+}
+
+.temp-conversion.active:hover {
+  text-decoration: none;
+  color: #13a3b8;
 }
