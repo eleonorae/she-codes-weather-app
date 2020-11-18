@@ -40,3 +40,32 @@
   text-decoration: none;
   color: #13a3b8;
 }
+
+#forecast {
+  text-align: center;
+}
+
+#go-button {
+  background-color: #ec6e4b;
+  border-color: #ec6e4b;
+}
+
+#go-button:hover {
+  background-color: #e95d36;
+  border-color: #e95d36;
+}
+
+#current-location-button {
+  background-color: #48484a;
+  border-color: #48484a;
+  color: white;
+}
+
+#current-location-button:hover {
+  background-color: #3b3b3d;
+  border-color: #3b3b3d;
+}
+
+footer {
+  text-align: center;
+}
