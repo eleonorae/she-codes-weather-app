@@ -53,13 +53,13 @@ function updateTime(timestamp){
    let forecast = null;
 
    for (let index = 0; index < 6; index++) {
-  forecast = response.data.list[index];
+  let forecast = response.data.list[index];
     forecastElement.innerHTML += 
   `
   <div class="col-2">
               ${updateTime(forecast.dt * 1000)}
               <br />
-              <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+              <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
               />
               <div class="weather-forecast-temperature">
               <strong>${Math.round(forecast.main.temp_max)}°</strong> 
@@ -91,6 +91,8 @@ function handleSubmit(event){
   let apiKey = "8a57f1d5fc85e50c20e2b1b1b4377d2d";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
+     apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 };
 
   function getCurrentLocation(event){
